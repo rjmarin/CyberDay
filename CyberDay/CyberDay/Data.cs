@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CyberDay
 {
@@ -20,7 +21,7 @@ namespace CyberDay
 
         public Data()
         {
-            this.Fill();
+            //this.Fill();
             
         }
         void Fill()
@@ -206,7 +207,7 @@ namespace CyberDay
 
         public static void Serialize_Product(string file_name, Data lista)
         {
-            string file = @"..\..\" + file_name;
+            string file = "../../" + file_name;
             try
             {
                 string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, file);
@@ -226,7 +227,7 @@ namespace CyberDay
         public static Data Deserialize_Product(string file_name)
         {
             Data output;
-            string file = @"..\..\" + file_name;
+            string file = "../../" + file_name;
             try
             {
                 string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, file);
@@ -240,8 +241,8 @@ namespace CyberDay
             }
             catch (Exception e)
             {
-                output = new Data();
-                return output;
+                MessageBox.Show(e.Message);
+                return null;
             }
 
         }

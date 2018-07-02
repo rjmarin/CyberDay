@@ -13,25 +13,28 @@ namespace CyberDay
 
     public partial class Form1 : Form
     {
-        Data data = Data.Deserialize_Product("dato.bin");
+        Data data = new Data();
         List<Producto> Out_Productos = new List<Producto>();
 
         public Form1()
         {
             InitializeComponent();
             panel_user.Visible = true;
+            panel_wishlist.Visible = false;
+
+            panel_user.Location = new Point(0, 0);
             foreach (string item in data.nombre_p)
             {
                 combo_categoria.Items.Add(item);
             }
-
+            Data.Serialize_Product("data.txt", data);
         }
 
 
         private void button_buscar_Click(object sender, EventArgs e)
         {
             
-            Data.Serialize_Product("dato.bin", data);
+            Data.Serialize_Product("data.bin", data);
             
         }
 
@@ -119,6 +122,62 @@ namespace CyberDay
         {
             Register a = new Register();
             a.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel_wishlist.Visible = true;
+            box_lista_deseos.Items.Clear();
+            foreach (Usuario i in data.usuarios)
+            {
+                if (label_bienvenida.Text == "Bienvenido " + i.Info())
+                {
+                    foreach (Producto item in i.lista_de_deseos)
+                    {
+
+                        box_lista_deseos.Items.Add(item.Infi());
+                    }
+
+
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (Usuario i in data.usuarios)
+            {
+                if (label_bienvenida.Text == "Bienvenido " + i.Info())
+                {
+
+                    foreach (Producto it in data.productos)
+                    {
+                        if (listbuscador.SelectedItem.ToString() == it.Infi())
+                        {
+                            MessageBox.Show(it.Infi());
+                            i.lista_de_deseos.Add(it);
+                        }
+                    }
+
+                }
+            }
+        }
+
+        private void button_salir_Click(object sender, EventArgs e)
+        {
+            panel_wishlist.Visible = false;
+        }
+
+        private void box_lista_deseos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            info_lista_deseos.Text = "";
+            foreach (Producto item in data.productos)
+            {
+                if (box_lista_deseos.SelectedItem.ToString() == item.Infi())
+                {
+                    info_lista_deseos.Text = item.Info();
+                }
+            }
         }
     }
 }
