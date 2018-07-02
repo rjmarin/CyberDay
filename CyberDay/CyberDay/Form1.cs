@@ -114,5 +114,11 @@ namespace CyberDay
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Register a = new Register();
+            a.Show();
+        }
     }
 }

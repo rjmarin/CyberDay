@@ -15,7 +15,8 @@ namespace CyberDay
         public List<Usuario> usuarios = new List<Usuario>();
         public List<Tienda> tiendas = new List<Tienda>();
         public List<String> nombre_p = new List<string>();
-
+        public int first_user_id = 0;
+        public int last_user_id = 0;
 
         public Data()
         {
@@ -149,6 +150,7 @@ namespace CyberDay
                 productos.Add(p);
 
             }
+            first_user_id += c;
             for (int i = 0; i < 50; i++)
             {
                 string nombre = "";
@@ -159,11 +161,12 @@ namespace CyberDay
                 nombre += " ";
                 nombre += apellidos[ap];
                 c += 1;
-                int saldo = random.Next(150000000);
+                int saldo = random.Next(15000000);
                 Usuario x = new Usuario(nombre,apellidos[ap], "1234", c, saldo);
                 usuarios.Add(x);
 
             }
+            last_user_id += c;
 
            
             for (int i = 0; i < productos.Count; i++ )
