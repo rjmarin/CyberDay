@@ -47,6 +47,7 @@
             this.box_lista_deseos = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button_comprar = new System.Windows.Forms.Button();
             this.panel_user.SuspendLayout();
             this.panel_wishlist.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +175,7 @@
             // 
             // panel_wishlist
             // 
+            this.panel_wishlist.Controls.Add(this.button_comprar);
             this.panel_wishlist.Controls.Add(this.button_salir);
             this.panel_wishlist.Controls.Add(this.info_lista_deseos);
             this.panel_wishlist.Controls.Add(this.box_lista_deseos);
@@ -229,6 +231,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button_comprar
+            // 
+            this.button_comprar.Location = new System.Drawing.Point(235, 104);
+            this.button_comprar.Name = "button_comprar";
+            this.button_comprar.Size = new System.Drawing.Size(75, 23);
+            this.button_comprar.TabIndex = 3;
+            this.button_comprar.Text = "Comprar";
+            this.button_comprar.UseVisualStyleBackColor = true;
+            this.button_comprar.Click += new System.EventHandler(this.button_comprar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +288,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_salir;
+        private System.Windows.Forms.Button button_comprar;
     }
 }
 

@@ -40,7 +40,7 @@ namespace CyberDay
         {
             return this.nombre + "Saldo: $" + this.saldo;
         }
-        void comprar()
+        public void comprar()
         {
             int suma = 0;
             foreach (Producto item in lista_de_deseos)

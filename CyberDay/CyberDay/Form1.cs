@@ -27,7 +27,7 @@ namespace CyberDay
             {
                 combo_categoria.Items.Add(item);
             }
-            Data.Serialize_Product("data.txt", data);
+           
         }
 
 
@@ -95,13 +95,29 @@ namespace CyberDay
             IEnumerable<Producto> output = data.productos.Where(item => item.Infi().Contains(text_buscador.Text));
             if (text_buscador.Text == "")
             {
-
+                foreach (Producto item in data.productos)
+                {
+                    if (combo_categoria.Text == item.nombre)
+                    {
+                        listbuscador.Items.Add(item.Infi());
+                    }
+                  
+                    
+                }
             }
             else
             {
                 foreach (Producto item in output)
                 {
-                    listbuscador.Items.Add(item.Infi());
+                    if (combo_categoria.Text == item.nombre)
+                    {
+                        listbuscador.Items.Add(item.Infi());
+                    }
+                    else if(combo_categoria.Text == "")
+                    {
+                        listbuscador.Items.Add(item.Infi());
+                    }
+                    
                 }
             }
         }
@@ -177,6 +193,31 @@ namespace CyberDay
                 {
                     info_lista_deseos.Text = item.Info();
                 }
+            }
+        }
+
+        private void button_comprar_Click(object sender, EventArgs e)
+        {
+            foreach (Usuario i in data.usuarios)
+            {
+                if (label_bienvenida.Text == "Bienvenido " + i.Info())
+                {
+                    foreach (Producto item in i.lista_de_deseos)
+                    {
+                        foreach (Producto ite in data.productos)
+                        {
+                            if (item.Info()==ite.Info())
+                            {
+                                ite.stock -= 1;
+                            }
+                        }
+                    }
+                    i.comprar();
+                    box_lista_deseos.Items.Clear();
+                    label_bienvenida.Text = "Bienvenido " + i.Info();
+
+                }
+               
             }
         }
     }

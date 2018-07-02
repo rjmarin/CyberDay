@@ -21,7 +21,7 @@ namespace CyberDay
 
         public Data()
         {
-            //this.Fill();
+            this.Fill();
             
         }
         void Fill()
