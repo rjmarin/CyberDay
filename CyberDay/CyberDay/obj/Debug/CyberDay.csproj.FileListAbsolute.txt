@@ -8,3 +8,13 @@ C:\Users\r_mar\source\repos\CyberDay\CyberDay\obj\Debug\CyberDay.csproj.Generate
 C:\Users\r_mar\source\repos\CyberDay\CyberDay\obj\Debug\CyberDay.csproj.CoreCompileInputs.cache
 C:\Users\r_mar\source\repos\CyberDay\CyberDay\obj\Debug\CyberDay.exe
 C:\Users\r_mar\source\repos\CyberDay\CyberDay\obj\Debug\CyberDay.pdb
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\bin\Debug\CyberDay.exe.config
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\bin\Debug\CyberDay.exe
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\bin\Debug\CyberDay.pdb
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.csprojAssemblyReference.cache
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.Form1.resources
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.Properties.Resources.resources
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.csproj.GenerateResource.cache
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.csproj.CoreCompileInputs.cache
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.exe
+C:\Users\Hugo de la Fuente\Desktop\CyberDay\CyberDay\CyberDay\obj\Debug\CyberDay.pdb

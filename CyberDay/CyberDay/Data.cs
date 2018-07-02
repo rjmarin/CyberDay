@@ -14,11 +14,13 @@ namespace CyberDay
         public List<Producto> descuentos = new List<Producto>();
         public List<Usuario> usuarios = new List<Usuario>();
         public List<Tienda> tiendas = new List<Tienda>();
+        public List<String> nombre_p = new List<string>();
 
 
         public Data()
         {
             this.Fill();
+            
         }
         void Fill()
         {
@@ -27,7 +29,6 @@ namespace CyberDay
             List<string> apellidos = new List<string>();
             List<string> direccions = new List<string>();
             List<string> descripcions = new List<string>();
-            List<String> nombre_p = new List<string>();
             List<string> nom_weed = new List<string>();
             List<string> nom_sem = new List<string>();
             List<string> marca = new List<string>();
@@ -159,7 +160,7 @@ namespace CyberDay
                 nombre += apellidos[ap];
                 c += 1;
                 int saldo = random.Next(150000000);
-                Usuario x = new Usuario(nombre,apellidos[ap], "", c, saldo);
+                Usuario x = new Usuario(nombre,apellidos[ap], "1234", c, saldo);
                 usuarios.Add(x);
 
             }
@@ -198,14 +199,6 @@ namespace CyberDay
                
             }
             
-
-
-
-
-
-
-
-
         }
 
         public static void Serialize_Product(string file_name, Data lista)

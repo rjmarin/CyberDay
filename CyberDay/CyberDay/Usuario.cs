@@ -27,7 +27,19 @@ namespace CyberDay
             Id = id;
             this.saldo = saldo;
         }
+        public string Clave()
+        {
+            return this.clave;
+        }
+        public int ID()
+        {
+            return this.Id;
+        }
 
+        public string Info()
+        {
+            return this.nombre + "Saldo: $" + this.saldo;
+        }
         void comprar()
         {
             int suma = 0;

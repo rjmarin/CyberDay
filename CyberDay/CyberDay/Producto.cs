@@ -31,14 +31,14 @@ namespace CyberDay
         public string Info()
         {
             string s = "";
-            s += "nombre: " + nombre + "\n descripcion: " + descrip + "\n marca: "+ marca+ "\n precio: " + precio.ToString() + "\n stock: " + stock;
+            s += "nombre: " + nombre + Environment.NewLine + "descripcion: " + descrip + Environment.NewLine + "marca: " + marca + Environment.NewLine + "precio: $" + precio.ToString() + Environment.NewLine +"stock: " + stock;
             return s;
         }
 
         public string Infi()
         {
             string s = "";
-            s += "nombre: " + nombre  + " | marca: " + marca + " | precio: " + precio.ToString();
+            s += "nombre: " + nombre  + " | marca: " + marca + " | precio: $" + precio.ToString();
             return s;
         }
     }
