@@ -34,13 +34,21 @@
             this.text_info = new System.Windows.Forms.TextBox();
             this.combo_categoria = new System.Windows.Forms.ComboBox();
             this.panel_user = new System.Windows.Forms.Panel();
-            this.text_user = new System.Windows.Forms.TextBox();
-            this.text_clave = new System.Windows.Forms.TextBox();
-            this.LogIn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LogIn = new System.Windows.Forms.Button();
+            this.text_clave = new System.Windows.Forms.TextBox();
+            this.text_user = new System.Windows.Forms.TextBox();
             this.label_bienvenida = new System.Windows.Forms.Label();
+            this.button_Add_Producto = new System.Windows.Forms.Button();
+            this.button_lista_deseos = new System.Windows.Forms.Button();
+            this.panel_deseos = new System.Windows.Forms.Panel();
+            this.listBox_deseos = new System.Windows.Forms.ListBox();
+            this.textbox_deseos = new System.Windows.Forms.TextBox();
+            this.button_comprar = new System.Windows.Forms.Button();
+            this.button_salir_deseos = new System.Windows.Forms.Button();
             this.panel_user.SuspendLayout();
+            this.panel_deseos.SuspendLayout();
             this.SuspendLayout();
             // 
             // text_buscador
@@ -92,30 +100,34 @@
             // 
             // panel_user
             // 
+            this.panel_user.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_user.Controls.Add(this.label2);
             this.panel_user.Controls.Add(this.label1);
             this.panel_user.Controls.Add(this.LogIn);
             this.panel_user.Controls.Add(this.text_clave);
             this.panel_user.Controls.Add(this.text_user);
-            this.panel_user.Location = new System.Drawing.Point(12, 12);
+            this.panel_user.Location = new System.Drawing.Point(12, 2);
             this.panel_user.Name = "panel_user";
             this.panel_user.Size = new System.Drawing.Size(831, 415);
             this.panel_user.TabIndex = 5;
             // 
-            // text_user
+            // label2
             // 
-            this.text_user.Location = new System.Drawing.Point(376, 38);
-            this.text_user.Name = "text_user";
-            this.text_user.Size = new System.Drawing.Size(100, 20);
-            this.text_user.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(313, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password";
             // 
-            // text_clave
+            // label1
             // 
-            this.text_clave.Location = new System.Drawing.Point(376, 74);
-            this.text_clave.Name = "text_clave";
-            this.text_clave.Size = new System.Drawing.Size(100, 20);
-            this.text_clave.TabIndex = 1;
-            this.text_clave.UseSystemPasswordChar = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(313, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "UserID";
             // 
             // LogIn
             // 
@@ -127,23 +139,20 @@
             this.LogIn.UseVisualStyleBackColor = true;
             this.LogIn.Click += new System.EventHandler(this.LogIn_Click);
             // 
-            // label1
+            // text_clave
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(313, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "UserID";
+            this.text_clave.Location = new System.Drawing.Point(376, 74);
+            this.text_clave.Name = "text_clave";
+            this.text_clave.Size = new System.Drawing.Size(100, 20);
+            this.text_clave.TabIndex = 1;
+            this.text_clave.UseSystemPasswordChar = true;
             // 
-            // label2
+            // text_user
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(313, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Password";
+            this.text_user.Location = new System.Drawing.Point(376, 38);
+            this.text_user.Name = "text_user";
+            this.text_user.Size = new System.Drawing.Size(100, 20);
+            this.text_user.TabIndex = 0;
             // 
             // label_bienvenida
             // 
@@ -153,11 +162,86 @@
             this.label_bienvenida.Size = new System.Drawing.Size(0, 13);
             this.label_bienvenida.TabIndex = 5;
             // 
+            // button_Add_Producto
+            // 
+            this.button_Add_Producto.Location = new System.Drawing.Point(537, 394);
+            this.button_Add_Producto.Name = "button_Add_Producto";
+            this.button_Add_Producto.Size = new System.Drawing.Size(75, 23);
+            this.button_Add_Producto.TabIndex = 5;
+            this.button_Add_Producto.Text = "Agregar producto";
+            this.button_Add_Producto.UseVisualStyleBackColor = true;
+            this.button_Add_Producto.Click += new System.EventHandler(this.button_Add_Producto_Click);
+            // 
+            // button_lista_deseos
+            // 
+            this.button_lista_deseos.Location = new System.Drawing.Point(528, 10);
+            this.button_lista_deseos.Name = "button_lista_deseos";
+            this.button_lista_deseos.Size = new System.Drawing.Size(110, 24);
+            this.button_lista_deseos.TabIndex = 6;
+            this.button_lista_deseos.Text = "lista de deseos";
+            this.button_lista_deseos.UseVisualStyleBackColor = true;
+            this.button_lista_deseos.Click += new System.EventHandler(this.button_lista_deseos_Click);
+            // 
+            // panel_deseos
+            // 
+            this.panel_deseos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_deseos.Controls.Add(this.button_salir_deseos);
+            this.panel_deseos.Controls.Add(this.button_comprar);
+            this.panel_deseos.Controls.Add(this.textbox_deseos);
+            this.panel_deseos.Controls.Add(this.listBox_deseos);
+            this.panel_deseos.Location = new System.Drawing.Point(52, 423);
+            this.panel_deseos.Name = "panel_deseos";
+            this.panel_deseos.Size = new System.Drawing.Size(538, 332);
+            this.panel_deseos.TabIndex = 7;
+            this.panel_deseos.Visible = false;
+            // 
+            // listBox_deseos
+            // 
+            this.listBox_deseos.FormattingEnabled = true;
+            this.listBox_deseos.Location = new System.Drawing.Point(20, 48);
+            this.listBox_deseos.Name = "listBox_deseos";
+            this.listBox_deseos.Size = new System.Drawing.Size(176, 199);
+            this.listBox_deseos.TabIndex = 3;
+            this.listBox_deseos.SelectedIndexChanged += new System.EventHandler(this.listBox_deseos_SelectedIndexChanged);
+            // 
+            // textbox_deseos
+            // 
+            this.textbox_deseos.AcceptsReturn = true;
+            this.textbox_deseos.Location = new System.Drawing.Point(243, 48);
+            this.textbox_deseos.Multiline = true;
+            this.textbox_deseos.Name = "textbox_deseos";
+            this.textbox_deseos.ReadOnly = true;
+            this.textbox_deseos.Size = new System.Drawing.Size(188, 208);
+            this.textbox_deseos.TabIndex = 4;
+            // 
+            // button_comprar
+            // 
+            this.button_comprar.Location = new System.Drawing.Point(247, 281);
+            this.button_comprar.Name = "button_comprar";
+            this.button_comprar.Size = new System.Drawing.Size(75, 23);
+            this.button_comprar.TabIndex = 5;
+            this.button_comprar.Text = "Comprar!";
+            this.button_comprar.UseVisualStyleBackColor = true;
+            this.button_comprar.Click += new System.EventHandler(this.button_comprar_Click);
+            // 
+            // button_salir_deseos
+            // 
+            this.button_salir_deseos.Location = new System.Drawing.Point(356, 281);
+            this.button_salir_deseos.Name = "button_salir_deseos";
+            this.button_salir_deseos.Size = new System.Drawing.Size(75, 23);
+            this.button_salir_deseos.TabIndex = 6;
+            this.button_salir_deseos.Text = "salir";
+            this.button_salir_deseos.UseVisualStyleBackColor = true;
+            this.button_salir_deseos.Click += new System.EventHandler(this.button_salir_deseos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 450);
+            this.ClientSize = new System.Drawing.Size(870, 749);
+            this.Controls.Add(this.panel_deseos);
+            this.Controls.Add(this.button_lista_deseos);
+            this.Controls.Add(this.button_Add_Producto);
             this.Controls.Add(this.label_bienvenida);
             this.Controls.Add(this.panel_user);
             this.Controls.Add(this.combo_categoria);
@@ -169,6 +253,8 @@
             this.Text = "Form1";
             this.panel_user.ResumeLayout(false);
             this.panel_user.PerformLayout();
+            this.panel_deseos.ResumeLayout(false);
+            this.panel_deseos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +274,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button LogIn;
         private System.Windows.Forms.Label label_bienvenida;
+        private System.Windows.Forms.Button button_Add_Producto;
+        private System.Windows.Forms.Button button_lista_deseos;
+        private System.Windows.Forms.Panel panel_deseos;
+        private System.Windows.Forms.TextBox textbox_deseos;
+        private System.Windows.Forms.ListBox listBox_deseos;
+        private System.Windows.Forms.Button button_salir_deseos;
+        private System.Windows.Forms.Button button_comprar;
     }
 }
 

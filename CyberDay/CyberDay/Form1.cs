@@ -93,6 +93,14 @@ namespace CyberDay
             if (text_buscador.Text == "")
             {
 
+                foreach (Producto item in data.productos)
+                {
+                    if (item.nombre == combo_categoria.SelectedItem.ToString())
+                    {
+                        listbuscador.Items.Add(item.Infi());
+                    }
+                    
+                }
             }
             else
             {
@@ -110,7 +118,82 @@ namespace CyberDay
                 if (text_user.Text == persona.ID().ToString() && text_clave.Text == persona.Clave())
                 {
                     panel_user.Visible = false;
-                    label_bienvenida.Text += "Bienvenido " + persona.Info();
+                    label_bienvenida.Text = "Bienvenido " + persona.Info();
+                }
+            }
+        }
+
+        private void button_Add_Producto_Click(object sender, EventArgs e)
+        {
+            foreach (Usuario i in data.usuarios)
+            {
+                if (label_bienvenida.Text=="Bienvenido "+ i.Info())
+                {
+                   
+                    foreach (Producto it in data.productos)
+                    {
+                        if (listbuscador.SelectedItem.ToString()==it.Infi())
+                        {
+                            MessageBox.Show(it.Infi());
+                            i.lista_de_deseos.Add(it);
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        private void listBox_deseos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textbox_deseos.Text = "";
+            foreach (Producto item in data.productos)
+            {
+                if (listbuscador.SelectedItem.ToString() == item.Infi())
+                {
+                    textbox_deseos.Text = item.Info();
+                }
+            }
+            foreach (Tienda item in data.tiendas)
+            {
+                if (listbuscador.SelectedItem.ToString() == item.Infi())
+                {
+                    textbox_deseos.Text = item.Info();
+                }
+            }
+        }
+
+        private void button_lista_deseos_Click(object sender, EventArgs e)
+        {
+            panel_deseos.Visible = true;
+
+            foreach (Usuario i in data.usuarios)
+            {
+                if (label_bienvenida.Text =="Bienvenido "+ i.Info())
+                {
+                    foreach (Producto item in i.lista_de_deseos)
+                    {
+                        
+                        listBox_deseos.Items.Add(item.Infi());
+                    }
+                   
+
+                }
+            }
+        }
+
+        private void button_salir_deseos_Click(object sender, EventArgs e)
+        {
+            panel_deseos.Visible = false;
+        }
+
+        private void button_comprar_Click(object sender, EventArgs e)
+        {
+            foreach (Usuario i in data.usuarios)
+            {
+                if (label_bienvenida.ToString() == i.Info())
+                {
+                    i.comprar();
+
                 }
             }
         }

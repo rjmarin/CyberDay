@@ -17,7 +17,7 @@ namespace CyberDay
         string clave;
         int Id;
         int saldo;
-        List<Producto> lista_de_deseos = new List<Producto>();
+        public List<Producto> lista_de_deseos = new List<Producto>();
 
         public Usuario(string nombre, string mail, string clave, int id, int saldo)
         {
@@ -40,7 +40,7 @@ namespace CyberDay
         {
             return this.nombre + "Saldo: $" + this.saldo;
         }
-        void comprar()
+        public void comprar()
         {
             int suma = 0;
             foreach (Producto item in lista_de_deseos)
